@@ -1,5 +1,7 @@
 package com.soprasteria.springjpacountry.Model;
 
+
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -56,7 +58,7 @@ public class Region {
 	}
 
 	@ManyToOne
-    @JoinColumn(name = "continent_id")
+    @JoinColumn(name = "continent_id", nullable = false)
     private Continent continent;
 
 }
