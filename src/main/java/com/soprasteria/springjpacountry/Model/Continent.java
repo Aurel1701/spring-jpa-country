@@ -20,8 +20,7 @@ public class Continent {
 	  private int continentId;
 	  private String name;
 	  
-	    @OneToMany
-	    @JoinColumn(name = "continent", nullable = false)
+	    @OneToMany(mappedBy = "continent")
 	    private List<Region> region;
 
 		public int getContinentId() {

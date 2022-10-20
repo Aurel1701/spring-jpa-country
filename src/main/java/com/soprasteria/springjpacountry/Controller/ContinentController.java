@@ -14,7 +14,7 @@ import com.soprasteria.springjpacountry.Model.Continent;
 import com.soprasteria.springjpacountry.repository.ContinentRepository;
 
 @RestController
-@RequestMapping("/continent") 
+@RequestMapping("/api/continent") 
 public class ContinentController {
 
 	@Autowired

@@ -13,7 +13,7 @@ import com.soprasteria.springjpacountry.repository.CountryRepository;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/country")
 public class CountryController {
 
 	@Autowired

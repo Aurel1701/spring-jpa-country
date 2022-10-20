@@ -2,12 +2,17 @@ package com.soprasteria.springjpacountry.Model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.GenerationType;
 
 @Entity
@@ -17,15 +22,17 @@ public class Country {
 	
 	  @Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
+	  @Column(name="country_id")
 	  private int countryId;
 	  private String name;
 	  private BigDecimal area;
-	  private LocalDate national_day;
+	 
 	  private char country_code2;
 	  private char country_code3;
 	  
 	  @ManyToOne
 	  @JoinColumn(name = "region_id")
+	  @JsonBackReference
 	  private Region region;
 	  
 	public int getCountryId() {
@@ -46,12 +53,9 @@ public class Country {
 	public void setArea(BigDecimal area) {
 		this.area = area;
 	}
-	public LocalDate getNational_day() {
-		return national_day;
-	}
-	public void setNational_day(LocalDate national_day) {
-		this.national_day = national_day;
-	}
+	
+	
+	
 	public char getCountry_code2() {
 		return country_code2;
 	}
